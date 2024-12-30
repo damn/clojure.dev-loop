@@ -8,7 +8,7 @@
 
   You can bind this on a key for smooth dev experience, here in VIM:
   ``` vimscript
-  nmap <F5> :Eval (do (in-ns 'forge.dev.loop)(restart!))
+  nmap <F5> :Eval (do (in-ns 'clojure.gdx.dev-loop)(restart!))
   ```"
   (:require [clj-commons.pretty.repl :refer [pretty-pst]]
             [clojure.java.io :as io]
@@ -59,7 +59,7 @@
   (loop []
     (when-not @thrown
       (do
-       (.bindRoot #'refresh-error (refresh :after 'gdl.dev/start-dev-loop!))
+       (.bindRoot #'refresh-error (refresh :after 'clojure.gdx.dev-loop/start-dev-loop!))
        (handle-throwable! refresh-error)))
     (wait!)
     (recur)))
