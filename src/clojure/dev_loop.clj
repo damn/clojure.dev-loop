@@ -37,7 +37,7 @@
   (loop []
     (when-not @thrown
       (do
-       (.bindRoot #'refresh-error (clojure.tools.namespace.repl/refresh :after 'cdq.dev-loop/start-dev-loop!))
+       (.bindRoot #'refresh-error (clojure.tools.namespace.repl/refresh :after 'clojure.dev-loop/start-dev-loop!))
        (handle-throwable! refresh-error)))
     (locking obj
       (Thread/sleep 10)
